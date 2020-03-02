@@ -9,6 +9,20 @@
       Title="HomePage">
 
     <Grid>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="images/background.jpg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!-- button lewy -->
+        <Button Grid.Column="0"  Opacity="0.4" Click="Button_Click" Margin="99,122,27,119" FontFamily="Segoe UI Black" FontSize="36">Czym jest RSS</Button>
+
+        <!-- button prawy -->
+        <Button Grid.Column="1" Opacity="0.4" Click="Button_Click_1" Margin="25,122,95,119" FontFamily="Segoe UI Black" FontSize="36">Lista kanałów</Button>
         
     </Grid>
 </Page>
