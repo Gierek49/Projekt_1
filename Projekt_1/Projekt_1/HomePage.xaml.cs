@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Projekt_1
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
+    /// Logika interakcji dla klasy HomePage.xaml
     /// </summary>
-    public partial class MainWindow : NavigationWindow
+    public partial class HomePage : Page
     {
-        public MainWindow()
+        public HomePage()
         {
             InitializeComponent();
         }
