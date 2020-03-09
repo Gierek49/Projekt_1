@@ -9,9 +9,11 @@ namespace Projekt_1.Downloading
 {
     class DownloadFromXml
     {
-        public void downloadXml(string linkUrl)
+        public static XElement downloadXml(string linkUrl)
         {
             XElement xml = XElement.Load(linkUrl);
+
+            return xml;
         }
     }
 }
