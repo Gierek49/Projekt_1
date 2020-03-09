@@ -16,25 +16,13 @@ using System.Windows.Shapes;
 namespace Projekt_1
 {
     /// <summary>
-    /// Logika interakcji dla klasy HomePage.xaml
+    /// Logika interakcji dla klasy RssInfo.xaml
     /// </summary>
-    public partial class HomePage : Page
+    public partial class RssInfo : Page
     {
-        public HomePage()
+        public RssInfo()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            RssInfo rssInfo = new RssInfo();
-            this.NavigationService.Navigate(rssInfo);
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            RssList rssList = new RssList();
-            this.NavigationService.Navigate(rssList);
         }
     }
 }
