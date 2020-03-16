@@ -11,7 +11,7 @@ namespace Projekt_1.Downloading
     {
         public List<string> DownloadSpecificaly(string url, string specificalItem)
         {
-            XElement xml = DownloadFromXml.downloadXml(url);
+            XElement xml = DownloadFromXml.DownloadXml(url);
 
            var itemFromXml = xml.Descendants(specificalItem).Select(x => x.Value).ToList();
 

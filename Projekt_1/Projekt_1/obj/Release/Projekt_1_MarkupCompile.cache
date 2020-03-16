@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\admin\Documents\Projekt_1\Projekt_1\Projekt_1\obj\Debug\
+C:\Users\admin\Documents\Projekt_1\Projekt_1\Projekt_1\obj\Release\
 Projekt_1
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\admin\Documents\Projekt_1\Projekt_1\Projekt_1\App.xaml
 4501521356
 
@@ -16,5 +16,5 @@ C:\Users\admin\Documents\Projekt_1\Projekt_1\Projekt_1\App.xaml
 131569487696
 HomePage.xaml;MainWindow.xaml;RssInfo.xaml;RssList.xaml;
 
-False
+True
 
