@@ -55,6 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Downloading\DownloadFromXml.cs" />
+    <Compile Include="Downloading\DownloadSpecificalyItems.cs" />
     <Compile Include="RssInfo.xaml.cs">
       <DependentUpon>RssInfo.xaml</DependentUpon>
     </Compile>
