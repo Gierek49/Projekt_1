@@ -14,5 +14,14 @@ namespace Projekt_1.Data
         private string Guid;
         private string Text;
 
+        public XmlItems(string title, string link, string description, string guid, string text)
+        {
+            Title = title;
+            Link = link;
+            Description = description;
+            Guid = guid;
+            Text = text;
+        }
+
     }
 }
