@@ -1,0 +1,30 @@
+{"_id":{"$numberInt":"1"},"Kanal":"Najnowsze","link":"https://www.tvn24.pl/najnowsze.xml"}
+{"_id":{"$numberInt":"2"},"Kanal":"Najważniejsze","link":"https://www.tvn24.pl/najwazniejsze.xml"}
+{"_id":{"$numberInt":"3"},"Kanal":"Galerie","link":"https://www.tvn24.pl/zdjecia.xml"}
+{"_id":{"$numberInt":"4"},"Kanal":"Ameryka Wybiera. Wybory prezydenckie 2016","link":"https://www.tvn24.pl/ameryka-wybiera-wybory-prezydenckie-2016,145,m.xml"}
+{"_id":{"$numberInt":"5"},"Kanal":"Ekstraklasa.tv","link":"https://ekstraklasa.tv/ekstraklasa-tv,83,m.xml"}
+{"_id":{"$numberInt":"6"},"Kanal":"Sport","link":"https://eurosport.tvn24.pl/sport,81,m.xml"}
+{"_id":{"$numberInt":"7"},"Kanal":"TVN24 BiŚ","link":"https://tvn24bis.pl/najnowsze.xml"}
+{"_id":{"$numberInt":"8"},"Kanal":"Polska","link":"https://www.tvn24.pl/wiadomosci-z-kraju,3.xml"}
+{"_id":{"$numberInt":"9"},"Kanal":"Świat","link":"https://www.tvn24.pl/wiadomosci-ze-swiata,2.xml"}
+{"_id":{"$numberInt":"10"},"Kanal":"Biznes","link":"https://www.tvn24.pl/biznes-gospodarka,6.xml"}
+{"_id":{"$numberInt":"11"},"Kanal":"Meteo","link":"https://www.tvn24.pl/pogoda,7.xml"}
+{"_id":{"$numberInt":"12"},"Kanal":"Kultura i Styl","link":"https://www.tvn24.pl/kultura-styl,8.xml"}
+{"_id":{"$numberInt":"13"},"Kanal":"Kontakt","link":"https://www.tvn24.pl/kontakt,9.xml"}
+{"_id":{"$numberInt":"14"},"Kanal":"Ciekawostki","link":"https://www.tvn24.pl/ciekawostki-michalki,5.xml"}
+{"_id":{"$numberInt":"15"},"Kanal":"Wydarzenia 2017 - Świat","link":"https://www.tvn24.pl/wydarzenia-2017-swiat,105.xml"}
+{"_id":{"$numberInt":"16"},"Kanal":"Wydarzenia 2017 - Polska","link":"https://www.tvn24.pl/wydarzenia-2017-polska,104.xml"}
+{"_id":{"$numberInt":"17"},"Kanal":"Wydarzenia 2016 - Świat","link":"https://www.tvn24.pl/wydarzenia-2016-swiat,102.xml"}
+{"_id":{"$numberInt":"18"},"Kanal":"Wydarzenia 2016 - Polska","link":"https://www.tvn24.pl/wydarzenia-2016-polska,101.xml"}
+{"_id":{"$numberInt":"19"},"Kanal":"Wideo z napisami","link":"https://www.tvn24.pl/wideo-z-napisami,100.xml"}
+{"_id":{"$numberInt":"20"},"Kanal":"Active","link":"https://www.tvn24.pl/active,97.xml"}
+{"_id":{"$numberInt":"21"},"Kanal":"Alarm TVN Meteo","link":"https://www.tvn24.pl/alarm-pogodowy,70.xml"}
+{"_id":{"$numberInt":"22"},"Kanal":"Łódź","link":"https://www.tvn24.pl/lodz,69.xml"}
+{"_id":{"$numberInt":"23"},"Kanal":"Katowice","link":"https://www.tvn24.pl/katowice,51.xml"}
+{"_id":{"$numberInt":"24"},"Kanal":"Kraków","link":"https://www.tvn24.pl/krakow,50.xml"}
+{"_id":{"$numberInt":"25"},"Kanal":"Najnowsze","link":"https://www.tvn24.pl/najnowsze,49.xml"}
+{"_id":{"$numberInt":"26"},"Kanal":"Wrocław","link":"https://www.tvn24.pl/wroclaw,44.xml"}
+{"_id":{"$numberInt":"27"},"Kanal":"Poznań","link":"https://www.tvn24.pl/poznan,43.xml"}
+{"_id":{"$numberInt":"28"},"Kanal":"Pomorze","link":"https://www.tvn24.pl/pomorze,42.xml"}
+{"_id":{"$numberInt":"29"},"Kanal":"Warszawa","link":"https://www.tvn24.pl/warszawa,41.xml"}
+{"_id":{"$numberInt":"30"},"Kanal":"Tech","link":"https://www.tvn24.pl/internet-hi-tech-media,40.xml"}
