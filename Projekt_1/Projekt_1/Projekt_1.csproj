@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Data\Kanaly.cs" />
+    <Compile Include="Data\XmlItems.cs" />
     <Compile Include="Downloading\DownloadFromXml.cs" />
     <Compile Include="Downloading\DownloadSpecificalyItems.cs" />
     <Compile Include="RssInfo.xaml.cs">

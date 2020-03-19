@@ -11,6 +11,6 @@ namespace Projekt_1.Data
         private int _id;
         public string Kanal;
         public string link;
-
+        private XmlItems item;
     }
 }
