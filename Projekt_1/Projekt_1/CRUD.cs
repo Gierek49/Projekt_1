@@ -14,9 +14,52 @@ namespace Projekt_1
     {
         static void Main(string[] args)
         {
-            MongoCRUD db = new MongoCRUD("AddresBook");
+            MongoCRUD db = new MongoCRUD("RRS");
+
+            ChannelModel chanel = new ChannelModel
+
+            {
+                kanal = "",
+                link = "",
+                channelinfo = new Channelinfo
+                {
+                    title = "",
+                    link = "",
+                    description = "",
+                    guid = "",
+                    text = ""
+                }
+            };
+            db.InsertRecord("Kanaly ", chanel);
             Console.ReadLine();
         }
+    }
+
+    public class ChannelModel
+    {
+        [BsonId]
+
+        public Guid Id { get; set; }
+
+        public string kanal { get; set; }
+
+        public string link { get; set; }
+
+        public List item { get; set; }
+
+        public Channelinfo channelinfo { get; set; }
+    }
+    public class Channelinfo
+    {
+        public string title { get; set; }
+
+        public string link { get; set; }
+
+        public string description { get; set; }
+
+        public string guid { get; set; }
+
+        public string text { get; set; }
     }
 
     public class MongoCRUD
