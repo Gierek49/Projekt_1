@@ -8,10 +8,10 @@ namespace Projekt_1.Data
 {
     class Kanaly
     {
-        private int _id;
+        public int _id;
         public string Kanal;
         public string link;
-        private List<XmlItems> item;
+       public List<XmlItems> item;
 
         public Kanaly(int id, string kanal, string link, List<XmlItems> item)
         {

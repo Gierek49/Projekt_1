@@ -8,11 +8,15 @@ namespace Projekt_1.Data
 {
     class XmlItems
     {
-        private string Title;
-        private string Link;
-        private string Description;
-        private string Guid;
-        private string Text;
+        public string Title { get; set; }
+
+        public string Link { get; set; }
+
+        public string Description { get; set; }
+
+        public string Guid { get; set; }
+
+        public string Text { get; set; }
 
         public XmlItems(string title, string link, string description, string guid, string text)
         {
