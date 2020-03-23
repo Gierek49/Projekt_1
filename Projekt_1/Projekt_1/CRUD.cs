@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Atributes;
 using MongoDB.Driver;
+using Data;
+using Downloading;
 
 
 namespace Projekt_1
@@ -14,7 +16,7 @@ namespace Projekt_1
     {
         static void Main(string[] args)
         {
-            MongoCRUD db = new MongoCRUD("AddresBook");
+            MongoCRUD db = new MongoCRUD("Kanaly");
             Console.ReadLine();
         }
     }
