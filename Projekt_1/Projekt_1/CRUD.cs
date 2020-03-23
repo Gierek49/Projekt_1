@@ -13,50 +13,14 @@ namespace Projekt_1
 {
     class CRUD
     {
-        static void Main(string[] args)
+        static void InsertToKanaly(Kanaly toKanaly)
         {
 
             MongoCRUD db = new MongoCRUD("RRS");
 
-            ChannelModel chanel = new ChannelModel
+            db.InsertRecord("Kanaly ",toKanaly);
 
-            {
-                kanal = "",
-                link = "",
-                channelinfo = new Channelinfo
-                {
-                    title = "",
-                    link = "",
-                    description = "",
-                    guid = "",
-                    text = ""
-                }
-            };
-            db.InsertRecord("Kanaly ", chanel);
             Console.ReadLine();
-        }
-    }
-    public class MongoCRUD
-    {
-        private IMongoDatabase db;
-
-        public MongoCRUD(string database)
-        {
-            var client = new MongoClient();
-            db = client.GetDatabase(database);
-        }
-
-        public void InsertRecord<T>(string table, T recprd)
-        {
-            var collection = db.GetCollection<T>(table);
-            collection.InsertOne(record);
-        }
-
-        public List<T> LoadRecords<T>(string table)
-        {
-            var collection = db.GetCollection<T>(table);
-
-            return collection.Find(new BsonDocument()).ToList();
         }
     }
 }
