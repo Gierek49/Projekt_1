@@ -25,11 +25,20 @@ namespace Projekt_1
             collection.InsertOne(record);
         }
 
-        public List<T> LoadRecords<T>(string table)
+        public List<T> LoadRecords<T>(ICollection table)
         {
             var collection = db.GetCollection<T>(table);
 
             return collection.Find(new BsonDocument()).ToList();
+        }
+        public void UpsertRecord<T>(string table,T record)
+        {
+            var collection = db.GetCollection<T>(table);
+
+            var result = collection.ReplaceOne(
+                new BsonDocument("chanel", chanel),
+                record,
+                new UpdateOptions { IsUpsert = true });
         }
     }
 }
