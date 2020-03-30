@@ -13,14 +13,32 @@ namespace Projekt_1
 {
     class CRUD
     {
-        static void InsertToKanaly(Kanaly toKanaly)
+        static void UpdateToKanaly(Kanaly toKanaly,Kanaly filter)
         {
+            MongoCRUD db = new MongoCRUD("RSS");
+            db.UpdateItem("Kanaly",toKanaly,filter);
+        }
 
-            MongoCRUD db = new MongoCRUD("RRS");
+        static void InsertToKanaly(Kanaly insertToKanaly)
+        {
+            MongoCRUD db = new MongoCRUD("RSS"); 
+            db.InsertRecord("Kanaly",insertToKanaly);
+        }
 
-            db.InsertRecord("Kanaly ",toKanaly);
+        static List<Kanaly> LoadKanaly()
+        {
+            MongoCRUD db=new MongoCRUD("RSS");
+           var loadkanaly= db.LoadRecords<Kanaly>("Kanaly");
 
-            Console.ReadLine();
+           return loadkanaly;
+        }
+
+        static List<Kanaly> LoadOne(string kanal)
+        {
+            MongoCRUD db = new MongoCRUD("RSS");
+            var load = db.LoadRecord<Kanaly>("Kanly", kanal);
+
+            return load;
         }
     }
 }

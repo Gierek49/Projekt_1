@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 using Projekt_1.Data;
 
 namespace Projekt_1
@@ -25,20 +27,34 @@ namespace Projekt_1
             collection.InsertOne(record);
         }
 
-        public List<T> LoadRecords<T>(ICollection table)
+        public List<T> LoadRecords<T>(string table)
         {
             var collection = db.GetCollection<T>(table);
 
             return collection.Find(new BsonDocument()).ToList();
         }
-        public void UpsertRecord<T>(string table,T record)
+        public List<T> LoadRecord<T>(string table, string kanal)
         {
             var collection = db.GetCollection<T>(table);
 
-            var result = collection.ReplaceOne(
-                new BsonDocument("chanel", chanel),
-                record,
-                new UpdateOptions { IsUpsert = true });
+            var filter = Builders<T>.Filter.Eq("Kanal",kanal);
+
+            return collection.Find(filter).ToList();
         }
+
+        public void UpdateItem(string table, Kanaly record, Kanaly fillter)
+        {
+            var collection = db.GetCollection<Kanaly>(table);
+
+            var filter = Builders<Kanaly>.Filter.Eq("Kanal", fillter.Kanal);
+
+            var uprecord = Builders<Kanaly>.Update.Set("item", record.item);
+
+            var result = collection.UpdateOne(filter, uprecord);
+        }
+
+
+
+
     }
 }
