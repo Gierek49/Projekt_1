@@ -33,7 +33,7 @@ namespace Projekt_1
            return loadkanaly;
         }
 
-        static List<Kanaly> LoadOne(string kanal)
+        static List<Kanaly> LoadOneKanal(string kanal)
         {
             MongoCRUD db = new MongoCRUD("RSS");
             var load = db.LoadRecord<Kanaly>("Kanly", kanal);
