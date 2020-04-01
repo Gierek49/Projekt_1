@@ -24,7 +24,6 @@ namespace Projekt_1
         public HomePage()
         {
             InitializeComponent();
-            refresh();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
