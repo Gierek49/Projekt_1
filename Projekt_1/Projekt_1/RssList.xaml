@@ -29,11 +29,8 @@
             Lista kanałów
         </Label>
 
-        <ListBox Opacity="0.7" Name="peopleListBox" Grid.Column="1" Grid.Row="1">
-            <ListBoxItem>Konrad</ListBoxItem>
-            <ListBoxItem>Damian</ListBoxItem>
-            <ListBoxItem>Patryk</ListBoxItem>
-            <ListBoxItem>Saszka</ListBoxItem>
+        <ListBox Opacity="0.7" Name="peopleListBox" Grid.Column="1" Grid.Row="1"  >
+            
         </ListBox>
 
         <!-- View report button -->

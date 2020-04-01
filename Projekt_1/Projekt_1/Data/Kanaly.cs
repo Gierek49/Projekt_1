@@ -9,7 +9,7 @@ namespace Projekt_1.Data
     /// <summary>
     /// Przedstawienie bazy danych za pomocą klasy
     /// </summary>
-    class Kanaly
+    public class Kanaly
     {
         public int _id;
         public string Kanal;

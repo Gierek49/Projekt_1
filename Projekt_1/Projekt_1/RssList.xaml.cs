@@ -23,6 +23,23 @@ namespace Projekt_1
         public RssList()
         {
             InitializeComponent();
+            GetData();
         }
+
+       
+
+        public void GetData()
+        {
+          
+            var dr = CRUD.LoadKanaly().Select(x => x.Kanal).ToList();
+
+            for (int i = 0; i < dr.Count(); i++)
+            { 
+                peopleListBox.Items.Add(dr[i]);
+            }
+
+        }
+       
+        
     }
 }

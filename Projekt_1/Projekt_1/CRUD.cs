@@ -11,7 +11,7 @@ using Projekt_1.Downloading;
 
 namespace Projekt_1
 {
-    class CRUD
+    public class CRUD
     {
         /// <summary>
         /// Wywołanie funcji Update to kanałyt UpdateToKanaly
@@ -35,7 +35,7 @@ namespace Projekt_1
         ///  Wywołanie funcji Update to kanałyt LoadKanaly
         /// </summary>
         /// <returns></returns>
-        static List<Kanaly> LoadKanaly()
+        public static List<Kanaly> LoadKanaly()
         {
             MongoCRUD db=new MongoCRUD("RSS");
            var loadkanaly= db.LoadRecords<Kanaly>("Kanaly");

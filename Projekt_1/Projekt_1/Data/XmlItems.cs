@@ -9,7 +9,7 @@ namespace Projekt_1.Data
     /// <summary>
     /// Klasa przedstawia pole items w BD
     /// </summary>
-    class XmlItems
+    public class XmlItems
     {
         public string Title { get; set; }
 
