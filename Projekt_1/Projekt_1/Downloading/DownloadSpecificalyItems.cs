@@ -10,7 +10,7 @@ namespace Projekt_1.Downloading
     /// <summary>
     /// Klasa służąca do pobierania danego atrybutu z xml
     /// </summary>
-    class DownloadSpecificalyItems
+   public class DownloadSpecificalyItems
     {
         /// <summary>
         /// Funkcja pobierająca dany atrybut z xml
@@ -18,7 +18,7 @@ namespace Projekt_1.Downloading
         /// <param name="url">Link do strony xml</param>
         /// <param name="specificalItem">Co dokładnie chcemy pobrać z xml np. link</param>
         /// <returns>Zwraca liste stringów z pobranymi atrybutami</returns>
-        public List<string> DownloadSpecificaly(string url, string specificalItem)
+        public static List<string> DownloadSpecificaly(string url, string specificalItem)
         {
             XElement xml = DownloadFromXml.DownloadXml(url);
 

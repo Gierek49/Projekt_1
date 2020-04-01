@@ -17,7 +17,7 @@ namespace Projekt_1
         /// Wywołanie funcji Update to kanałyt UpdateToKanaly
         /// <param name="toKanaly"></param>
         /// <param name="filter"></param>
-        static void UpdateToKanaly(Kanaly toKanaly,Kanaly filter)
+       public static void UpdateToKanaly(Kanaly toKanaly,Kanaly filter)
         {
             MongoCRUD db = new MongoCRUD("RSS");
             db.UpdateItem("Kanaly",toKanaly,filter);
@@ -26,7 +26,7 @@ namespace Projekt_1
         /// Wywołanie funkcji InsertToKanaly
         /// </summary>
         /// <param name="insertToKanaly"></param>
-        static void InsertToKanaly(Kanaly insertToKanaly)
+        public static void InsertToKanaly(Kanaly insertToKanaly)
         {
             MongoCRUD db = new MongoCRUD("RSS"); 
             db.InsertRecord("Kanaly",insertToKanaly);
@@ -47,7 +47,7 @@ namespace Projekt_1
         /// </summary>
         /// <param name="kanal"></param>/
         /// <returns></returns>
-        static List<Kanaly> LoadOneKanal(string kanal)
+        public static List<Kanaly> LoadOneKanal(string kanal)
         {
             MongoCRUD db = new MongoCRUD("RSS");
             var load = db.LoadRecord<Kanaly>("Kanly", kanal);

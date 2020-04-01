@@ -17,7 +17,7 @@ namespace Projekt_1.Downloading
         /// </summary>
         /// <param name="url">link do strony www którą chcemy pobrać</param>
         /// <returns>Zwraca czystego html w postaci stringu</returns>
-        public string Downloadpage(string url)
+        public static string Downloadpage(string url)
         {
             HtmlWeb webpage = new HtmlWeb();
             HtmlDocument webdoc = webpage.Load(url);

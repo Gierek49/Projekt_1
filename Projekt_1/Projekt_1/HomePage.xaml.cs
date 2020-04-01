@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Projekt_1.Data;
 
 namespace Projekt_1
 {
@@ -35,6 +36,29 @@ namespace Projekt_1
         {
             RssList rssList = new RssList();
             this.NavigationService.Navigate(rssList);
+        }
+
+        private void refresh()
+        {
+            var chanelsid = CRUD.LoadKanaly().Select(x => x._id).ToList();
+            var chanelsname = CRUD.LoadKanaly().Select(x => x.Kanal).ToList();
+            var chanellink = CRUD.LoadKanaly().Select(x => x.link).ToList();
+            for (int i = 0; i < chanellink.Count(); i++)
+            {
+                List<XmlItems> xmlItemses = new List<XmlItems>();
+                var title = Downloading.DownloadSpecificalyItems.DownloadSpecificaly(chanellink[i], "title");
+                var link = Downloading.DownloadSpecificalyItems.DownloadSpecificaly(chanellink[i], "link");
+                var description = Downloading.DownloadSpecificalyItems.DownloadSpecificaly(chanellink[i], "description");
+                var guid = Downloading.DownloadSpecificalyItems.DownloadSpecificaly(chanellink[i], "guid");
+                for (int j = 1; j < guid.Count(); j++)
+                {
+                    XmlItems xml = new XmlItems(title[j],link[j],description[j],guid[j],Downloading.DownloadHtml.Downloadpage(link[j]));
+                    xmlItemses.Add(xml);
+                }
+                Kanaly fillterKanaly = new Kanaly(chanelsid[i],chanelsname[i],chanellink[i],new List<XmlItems>());
+                Kanaly insKanaly = new Kanaly(chanelsid[i], chanelsname[i], chanellink[i], xmlItemses);
+                CRUD.UpdateToKanaly(insKanaly,fillterKanaly);
+            }
         }
     }
 }

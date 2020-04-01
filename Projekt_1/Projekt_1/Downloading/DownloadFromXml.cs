@@ -20,8 +20,14 @@ namespace Projekt_1.Downloading
         public static XElement DownloadXml(string linkUrl)
         {
             XElement xml = XElement.Load(linkUrl);
-
-            return xml;
+            if(xml!=null)
+            {
+                return xml;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 
