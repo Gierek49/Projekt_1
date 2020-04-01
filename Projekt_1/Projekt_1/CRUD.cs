@@ -13,18 +13,28 @@ namespace Projekt_1
 {
     class CRUD
     {
+        /// <summary>
+        /// Wywołanie funcji Update to kanałyt UpdateToKanaly
+        /// <param name="toKanaly"></param>
+        /// <param name="filter"></param>
         static void UpdateToKanaly(Kanaly toKanaly,Kanaly filter)
         {
             MongoCRUD db = new MongoCRUD("RSS");
             db.UpdateItem("Kanaly",toKanaly,filter);
         }
-
+        /// <summary>
+        /// Wywołanie funkcji InsertToKanaly
+        /// </summary>
+        /// <param name="insertToKanaly"></param>
         static void InsertToKanaly(Kanaly insertToKanaly)
         {
             MongoCRUD db = new MongoCRUD("RSS"); 
             db.InsertRecord("Kanaly",insertToKanaly);
         }
-
+        /// <summary>
+        ///  Wywołanie funcji Update to kanałyt LoadKanaly
+        /// </summary>
+        /// <returns></returns>
         static List<Kanaly> LoadKanaly()
         {
             MongoCRUD db=new MongoCRUD("RSS");
@@ -32,7 +42,11 @@ namespace Projekt_1
 
            return loadkanaly;
         }
-
+        /// <summary>
+        ///  Wywołanie funcji Update to kanałyt LoadOneKanal
+        /// </summary>
+        /// <param name="kanal"></param>/
+        /// <returns></returns>
         static List<Kanaly> LoadOneKanal(string kanal)
         {
             MongoCRUD db = new MongoCRUD("RSS");
