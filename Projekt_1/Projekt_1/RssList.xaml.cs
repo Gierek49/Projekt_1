@@ -102,6 +102,8 @@ namespace Projekt_1
                 var ch = CRUD.LoadArticle(peopleListBox.SelectedItem.ToString(), str);
                 Articlelist articlelist = new Articlelist();
                 articlelist.textBox.Text = ch;
+                ArticleViewModel articleView= new ArticleViewModel();
+                articleView.Text = ch;
                 (articlelist.textBox).GetBindingExpression(TextBox.TextProperty).UpdateSource();
 
             }
@@ -120,5 +122,12 @@ namespace Projekt_1
             GetArticle();
 
         }
+
+    }
+
+    class ArticleViewModel
+    {
+        public string Text { get; set; }
+
     }
 }
