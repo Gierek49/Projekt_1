@@ -157,3 +157,5 @@ C:\Users\admin\Documents\Projekt_1\Projekt_1\Projekt_1\bin\Debug\MongoDB.Driver.
 C:\Users\admin\Documents\Projekt_1\Projekt_1\Projekt_1\bin\Debug\Snappy.NET.xml
 C:\Users\admin\Documents\Projekt_1\Projekt_1\Projekt_1\bin\Debug\System.Buffers.xml
 C:\Users\admin\Documents\Projekt_1\Projekt_1\Projekt_1\obj\Debug\Projekt_1.csproj.CopyComplete
+C:\Users\admin\Documents\Projekt_1\Projekt_1\Projekt_1\obj\Debug\Articlelist.g.cs
+C:\Users\admin\Documents\Projekt_1\Projekt_1\Projekt_1\obj\Debug\Articlelist.baml

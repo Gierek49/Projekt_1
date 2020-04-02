@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Projekt_1.Data;
+using static Projekt_1.RssList;
 
 namespace Projekt_1
 {
@@ -24,6 +25,7 @@ namespace Projekt_1
         public HomePage()
         {
             InitializeComponent();
+        
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -38,24 +40,8 @@ namespace Projekt_1
             this.NavigationService.Navigate(rssList);
         }
 
-        private void refresh(string nameChanel)
-        {
-            var chanellink = CRUD.LoadOneKanal(nameChanel).Select(x => x.link).ToString();
-            List<XmlItems> xmlItemses = new List<XmlItems>();
-            var title = Downloading.DownloadSpecificalyItems.DownloadSpecificaly(chanellink, "title");
-            var link = Downloading.DownloadSpecificalyItems.DownloadSpecificaly(chanellink, "link");
-            var description = Downloading.DownloadSpecificalyItems.DownloadSpecificaly(chanellink, "description");
-            var guid = Downloading.DownloadSpecificalyItems.DownloadSpecificaly(chanellink, "guid");
+       
 
-            for (int j = 1; j < guid.Count(); j++)
-            {
-                XmlItems xml = new XmlItems(title[j], link[j], description[j], guid[j], Downloading.DownloadHtml.Downloadpage(link[j]));
-                xmlItemses.Add(xml);
-            }
-
-            Kanaly chanelfilter = CRUD.LoadOneKanal(nameChanel).First();
-            Kanaly uChanel = new Kanaly(chanelfilter._id,chanelfilter.Kanal,chanelfilter.link,xmlItemses);
-            CRUD.UpdateToKanaly(uChanel,chanelfilter);
-        }
+        
     }
 }

@@ -29,11 +29,16 @@
             Lista kanałów
         </Label>
 
-        <ListBox Opacity="0.7" Name="peopleListBox" Grid.Column="1" Grid.Row="1"  >
-            
+        <ListBox  Opacity="0.7" Name="peopleListBox" Grid.Column="1" Grid.Row="1"  >
+
+        </ListBox >
+        <ListBox Opacity="0.7" Name="peopleListBox2" Grid.Row="1">
+
         </ListBox>
 
         <!-- View report button -->
-        <Button Opacity="0.7" Grid.Column="1" Grid.Row="2" Margin="121,10,109,50" Width="170" HorizontalAlignment="Center">Wyświetl</Button>
+        <Button Opacity="0.7" Grid.Column="1" Grid.Row="2" Margin="121,10,109,50" Width="170" HorizontalAlignment="Center" Click="Button_click">Wyświetl</Button>
+        <Button Opacity="0.7"  Grid.Row="2" Margin="121,10,109,50" Width="170" HorizontalAlignment="Center" Click="Refresh">Odśwież</Button>
+        <Button Opacity="0.7"  Grid.Row="2" Margin="316,50,314,10" Width="170" HorizontalAlignment="Center" Click="Buton_click1" Grid.ColumnSpan="2">Wyswietl artykuł</Button>
     </Grid>
 </Page>

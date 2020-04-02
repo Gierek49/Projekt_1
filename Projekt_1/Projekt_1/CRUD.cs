@@ -50,9 +50,29 @@ namespace Projekt_1
         public static List<Kanaly> LoadOneKanal(string kanal)
         {
             MongoCRUD db = new MongoCRUD("RSS");
-            var load = db.LoadRecord<Kanaly>("Kanly", kanal);
+            var load = db.LoadRecord<Kanaly>("Kanaly", kanal);
 
             return load;
         }
+
+        public static string LoadArticle(string kanal, string title)
+        {
+            MongoCRUD db = new MongoCRUD("RSS");
+            var load = db.LoadRecord<Kanaly>("Kanaly", kanal).First();
+            //foreach (var items in load.item)
+            //{
+
+            //    Console.WriteLine(items.Title);
+
+            //}
+
+           var art = load.item.Where(x => x.Title == title).First();
+
+
+            return art.Text;
+        }
+
+
+
     }
 }

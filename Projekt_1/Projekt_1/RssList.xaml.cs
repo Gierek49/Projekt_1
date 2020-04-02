@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Projekt_1.Data;
 
 namespace Projekt_1
 {
@@ -20,27 +21,104 @@ namespace Projekt_1
     /// </summary>
     public partial class RssList : Page
     {
+
         public RssList()
         {
             InitializeComponent();
             GetData();
         }
 
-       
+
 
         public void GetData()
         {
-          
+
             var dr = CRUD.LoadKanaly().Select(x => x.Kanal).ToList();
 
             for (int i = 0; i < dr.Count(); i++)
-            { 
+            {
                 peopleListBox.Items.Add(dr[i]);
             }
 
 
         }
-       
-        
+
+        public static string SelectedItem()
+        {
+            var se = new RssList();
+            var str = se.peopleListBox.SelectedItem.ToString();
+            return str;
+        }
+
+        public void GetTiltle()
+        {
+            peopleListBox2.Items.Clear();
+            var str = peopleListBox.SelectedItem.ToString();
+            var dr = CRUD.LoadOneKanal(str).First();
+            var ch = dr.item.Select(x => x.Title).ToList();
+            for (int i = 0; i < ch.Count(); i++)
+            {
+                peopleListBox2.Items.Add(ch[i]);
+            }
+        }
+
+        private void Button_click(object sender, RoutedEventArgs e)
+        {
+            GetTiltle();
+        }
+        public void refresh()
+        {
+
+            string nameChanel = peopleListBox.SelectedItem.ToString();
+
+            var chanellink = CRUD.LoadOneKanal(nameChanel).Select(x => x.link).First().ToString();
+            List<XmlItems> xmlItemses = new List<XmlItems>();
+            var title = Downloading.DownloadSpecificalyItems.DownloadSpecificaly(chanellink, "title");
+            var link = Downloading.DownloadSpecificalyItems.DownloadSpecificaly(chanellink, "link");
+            var description = Downloading.DownloadSpecificalyItems.DownloadSpecificaly(chanellink, "description");
+            var guid = Downloading.DownloadSpecificalyItems.DownloadSpecificaly(chanellink, "guid");
+
+            for (int j = 1; j < guid.Count(); j++)
+            {
+                XmlItems xml = new XmlItems(title[j], link[j], description[j], guid[j], Downloading.DownloadHtml.Downloadpage(link[j]));
+                xmlItemses.Add(xml);
+            }
+
+            Kanaly chanelfilter = CRUD.LoadOneKanal(nameChanel).First();
+            Kanaly uChanel = new Kanaly(chanelfilter._id, chanelfilter.Kanal, chanelfilter.link, xmlItemses);
+            CRUD.UpdateToKanaly(uChanel, chanelfilter);
+
+        }
+
+        private void Refresh(object sender, RoutedEventArgs e)
+        {
+            refresh();
+        }
+        public void GetArticle()
+        {
+            try
+            {
+                var str = peopleListBox2.SelectedItem.ToString();
+                var ch = CRUD.LoadArticle(peopleListBox.SelectedItem.ToString(), str);
+                Articlelist articlelist = new Articlelist();
+                articlelist.textBox.Text = ch;
+                (articlelist.textBox).GetBindingExpression(TextBox.TextProperty).UpdateSource();
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+
+        private void Buton_click1(object sender, RoutedEventArgs e)
+        {
+            Articlelist articlelist = new Articlelist();
+            this.NavigationService.Navigate(articlelist);
+
+            GetArticle();
+
+        }
     }
 }
