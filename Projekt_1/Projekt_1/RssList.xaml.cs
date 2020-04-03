@@ -52,14 +52,22 @@ namespace Projekt_1
 
         public void GetTiltle()
         {
-            peopleListBox2.Items.Clear();
-            var str = peopleListBox.SelectedItem.ToString();
-            var dr = CRUD.LoadOneKanal(str).First();
-            var ch = dr.item.Select(x => x.Title).ToList();
-            for (int i = 0; i < ch.Count(); i++)
+            try
             {
-                peopleListBox2.Items.Add(ch[i]);
+                peopleListBox2.Items.Clear();
+                var str = peopleListBox.SelectedItem.ToString();
+                var dr = CRUD.LoadOneKanal(str).First();
+                var ch = dr.item.Select(x => x.Title).ToList();
+                for (int i = 0; i < ch.Count(); i++)
+                {
+                    peopleListBox2.Items.Add(ch[i]);
+                }
             }
+            catch (Exception e)
+            {
+                MessageBox.Show("Wybierz kanał do wyświetlenia");
+            }
+           
         }
 
         private void Button_click(object sender, RoutedEventArgs e)
@@ -68,26 +76,33 @@ namespace Projekt_1
         }
         public void refresh()
         {
-
-            string nameChanel = peopleListBox.SelectedItem.ToString();
-
-            var chanellink = CRUD.LoadOneKanal(nameChanel).Select(x => x.link).First().ToString();
-            List<XmlItems> xmlItemses = new List<XmlItems>();
-            var title = Downloading.DownloadSpecificalyItems.DownloadSpecificaly(chanellink, "title");
-            var link = Downloading.DownloadSpecificalyItems.DownloadSpecificaly(chanellink, "link");
-            var description = Downloading.DownloadSpecificalyItems.DownloadSpecificaly(chanellink, "description");
-            var guid = Downloading.DownloadSpecificalyItems.DownloadSpecificaly(chanellink, "guid");
-
-            for (int j = 1; j < guid.Count(); j++)
+            try
             {
-                XmlItems xml = new XmlItems(title[j], link[j], description[j], guid[j], Downloading.DownloadHtml.Downloadpage(link[j]));
-                xmlItemses.Add(xml);
+                string nameChanel = peopleListBox.SelectedItem.ToString();
+
+                var chanellink = CRUD.LoadOneKanal(nameChanel).Select(x => x.link).First().ToString();
+                List<XmlItems> xmlItemses = new List<XmlItems>();
+                var title = Downloading.DownloadSpecificalyItems.DownloadSpecificaly(chanellink, "title");
+                var link = Downloading.DownloadSpecificalyItems.DownloadSpecificaly(chanellink, "link");
+                var description = Downloading.DownloadSpecificalyItems.DownloadSpecificaly(chanellink, "description");
+                var guid = Downloading.DownloadSpecificalyItems.DownloadSpecificaly(chanellink, "guid");
+
+                for (int j = 1; j < guid.Count(); j++)
+                {
+                    XmlItems xml = new XmlItems(title[j], link[j], description[j], guid[j], Downloading.DownloadHtml.Downloadpage(link[j]));
+                    xmlItemses.Add(xml);
+                }
+
+                Kanaly chanelfilter = CRUD.LoadOneKanal(nameChanel).First();
+                Kanaly uChanel = new Kanaly(chanelfilter._id, chanelfilter.Kanal, chanelfilter.link, xmlItemses);
+                CRUD.UpdateToKanaly(uChanel, chanelfilter);
+
             }
-
-            Kanaly chanelfilter = CRUD.LoadOneKanal(nameChanel).First();
-            Kanaly uChanel = new Kanaly(chanelfilter._id, chanelfilter.Kanal, chanelfilter.link, xmlItemses);
-            CRUD.UpdateToKanaly(uChanel, chanelfilter);
-
+            catch (Exception e)
+            {
+                MessageBox.Show("Wybierz kanał do odświeżenia");
+            }
+         
         }
 
         private void Refresh(object sender, RoutedEventArgs e)
@@ -102,23 +117,22 @@ namespace Projekt_1
                 var ch = CRUD.LoadArticle(peopleListBox.SelectedItem.ToString(), str);
                 Articlelist articlelist = new Articlelist();
                 articlelist.textBox.Text = ch;
-                ArticleViewModel articleView= new ArticleViewModel();
-                articleView.Text = ch;
-                (articlelist.textBox).GetBindingExpression(TextBox.TextProperty).UpdateSource();
-
+               
+                //ArticleViewModel articleView= new ArticleViewModel();
+                //articleView.Text = ch;
+                //(articlelist.textBox).GetBindingExpression().UpdateSource();
+                this.NavigationService.Navigate(articlelist);
+                
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Wybierz artykuł");
             }
 
         }
 
         private void Buton_click1(object sender, RoutedEventArgs e)
         {
-            Articlelist articlelist = new Articlelist();
-            this.NavigationService.Navigate(articlelist);
-
             GetArticle();
 
         }

@@ -9,7 +9,7 @@
       Title="Articlelist">
 
     <Grid>
-        <TextBox Opacity="0.7" HorizontalAlignment="Left" Height="392" Margin="68,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="661" Name="textBox" Text="{Binding Text}"/>
+        <TextBox Opacity="0.7" HorizontalAlignment="Left" Height="400" Margin="68,20,68,20" TextWrapping="Wrap" VerticalAlignment="Top" Width="661" Name="textBox" />
         <Grid.Background>
             <ImageBrush ImageSource="images/background.jpg"/>
         </Grid.Background>

@@ -23,7 +23,6 @@ namespace Projekt_1
         public Articlelist()
         {
             InitializeComponent();
-
         }
     }
 }
